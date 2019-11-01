@@ -53,9 +53,17 @@ const CelebrityNew =  (req, res) => {
   res.render('celebrities/new', "")
 };
 
+const CelebrityDelete = (req, res) => {
+  let removeId = req.params.id
+  CelebrityModel.findByIdAndRemove(removeId, (err, data) => {
+    err ? res.send("Request not complete, error: ", err) : res.redirect('/')
+  });
+};
+
 module.exports = {
   CelebrityIndex,
   CelebrityIndexPost,
   CelebrityShow,
-  CelebrityNew
+  CelebrityNew,
+  CelebrityDelete
 }
