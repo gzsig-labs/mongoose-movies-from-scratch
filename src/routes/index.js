@@ -7,8 +7,10 @@ const {Celebrity} = require('../controllers');
 
 router.get('/', Celebrity.CelebrityIndex);
 router.post('/', Celebrity.CelebrityIndexPost);
-router.get('/celebrity/:id', Celebrity.CelebrityShow)
-router.get('/celebrities/new', Celebrity.CelebrityNew)
-router.post('/celebrities/:id/delete', Celebrity.CelebrityDelete)
+router.get('/celebrity/:id', Celebrity.CelebrityShow);
+router.get('/celebrities/new', Celebrity.CelebrityNew);
+router.post('/celebrities/:id/delete', Celebrity.CelebrityDelete);
+router.get('/celebrity/:id/edit', Celebrity.CelebrityUpdate);
+router.post('/celebrity/:id', Celebrity.CelebrityUpdatePost);
 
 module.exports = {router}
